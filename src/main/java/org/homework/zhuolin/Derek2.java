@@ -1,6 +1,10 @@
 package org.homework.zhuolin;
 import java.util.Scanner;
 
+/**
+ * 1、进制转换有问题，不是自己实现的
+ * 2、整体的代码格式有不足的地方
+ */
 public class Derek2
 {
     public static void main (String[] args) {

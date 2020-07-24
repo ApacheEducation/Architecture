@@ -1,6 +1,11 @@
 package org.homework.shenyilin;
 import java.util.Scanner;
 
+/**
+ * 1、进制转换不符合要求，需要自己实现
+ * 2、整体代码的风格没有太大的问题
+ * 3、对前端时间java语言最基础的东西掌握的不错
+ */
 public class Example {
 
     public static Boolean IsNumeric(String str){
@@ -64,9 +69,6 @@ public class Example {
 
             }
         }
-
-
-
         scan1.close();
     }
 }

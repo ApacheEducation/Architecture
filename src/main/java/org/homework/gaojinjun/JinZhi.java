@@ -2,6 +2,11 @@ package org.homework.gaojinjun;
 
 import java.util.Scanner;
 
+/**
+ * 1、进制转换自己实现，满足的作业的要求
+ * 2、代码的格式要完善，利用工具格式化
+ * 3、对前端时间java语言最基础的东西掌握的不错
+ */
 public class JinZhi {
 
     public static void main(String args[]){
@@ -83,7 +88,6 @@ public class JinZhi {
 
         while(num >= 1){
             YuShu = num % 16;
-
             char result;
 
             num = num / 16;
@@ -95,11 +99,7 @@ public class JinZhi {
             }
             JieGuo = result + JieGuo;
         }
-
         return JieGuo;
     }
-
-
-
 }
 
