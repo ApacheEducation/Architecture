@@ -16,21 +16,6 @@ public class Person {
 
     public String sex;
 
-   //构造方法 默认构造方法
-    public Person() {
-
-    }
-
-//    public Person(String name) {
-//        this.name = name;
-//    }
-//
-//    public Person(String name, int age, String address, String numberIdentify, String sex) {
-//         this.name = name;
-//         this.age = age;
-//         this.sex = sex;
-//    }
-
     public String getName() {
         return name;
     }
@@ -70,6 +55,4 @@ public class Person {
     public void setSex(String sex) {
         this.sex = sex;
     }
-
-
 }

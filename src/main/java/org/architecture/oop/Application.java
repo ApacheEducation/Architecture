@@ -1,6 +1,7 @@
 package org.architecture.oop;
 
-import org.architecture.oop.base.Person;
+import org.architecture.oop.oopextends.Anminal;
+import org.architecture.oop.oopextends.Cat;
 
 /**
  * @author yanghai
@@ -9,11 +10,15 @@ import org.architecture.oop.base.Person;
 public class Application {
 
     public static void main(String[] args) {
-        Person t = new Person();
-        t.setName("小明");
-        t.setAge(4);
+        Cat c = new Cat();
+        c.say();
 
-        System.out.println(t.getName());
+//        子类方法，父类虚拟调用
+        Anminal anminal = new Cat();
+        anminal.name = "aa";
+        anminal.say();
+        anminal.water();
+//        Cat cat = new Anminal();
+
     }
-
 }
