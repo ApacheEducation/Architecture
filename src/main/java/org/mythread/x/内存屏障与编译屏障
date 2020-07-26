@@ -1,0 +1,119 @@
+内存屏障和编译屏障就是用来告诉CPU和编译器停止优化的手段。
+编译屏障是指使用伪指令“memory”告诉编译器不能把“memory”执行前后的代码混淆在一起，
+这时“memory”起到了一种优化屏障的作用。
+内存屏障是在代码中使用一些特殊指令，如ARM中的dmb、dsb和isb指令，x86中的sfence、lfence和mfence指令。
+CPU遇到这些特殊指令后，要等待前面的指令执行完成才执行后面的指令。
+这些指令的作用就好像一道屏障把前后指令隔离开了，防止CPU把前后两段指令颠倒执行。
+
+（1）ARM平台的内存屏障指令。
+dsb：数据同步屏障指令。它的作用是等待所有前面的指令完成后再执行后面的指令。
+dmb：数据内存屏障指令。它的作用是等待前面访问内存的指令完成后再执行后面访问内存的指令。
+isb：指令同步屏障。它的作用是等待流水线中所有指令执行完成后再执行后面的指令。
+
+（2）x86平台上的内存屏障指令。
+sfence：存储屏障指令。它的作用是等待前面写内存的指令完成后再执行后面写内存的指令。
+lfence：读取屏障指令。它的作用是等待前面读取内存的指令完成后再执行后面读取内存的指令。
+mfence：混合屏障指令。它的作用是等待前面读写内存的指令完成后再执行后面读写内存的指令。
+
+Android是如何利用这些指令来实现内存屏障和编译屏障的：
+
+1．ARM平台的函数代码
+
+（1）编译屏障：
+
+void android_compiler_barrier()
+{
+    asm_volatile_("" : : : "memory");
+}
+编译屏障的实现只是使用了伪指令memory。
+
+（2）内存屏障：
+
+void android_memory_barrier()
+{
+#if ANDROID_SMP == 0
+    android_compiler_barrier();
+#else
+    __asm__volatile_("dmb" : : : "memory");
+#endif
+}
+
+void android_memory_store_barrier()
+{
+#if ANDROID_SMP == 0
+    android_compiler_barrier();
+#else
+    __asm_volatile_("dmb st" : : : "memory");
+#endif
+}
+内存屏障的函数中使用了宏ANDROID_SMP。
+它的值为0时表示是单CPU，这种情况下只使用编译屏障就可以了。
+在多CPU情况下，同时使用了内存屏障指令“dmb”和编译屏障的伪指令“memory”。
+函数android_memory_store_barrier()中的dmb指令还使用了选项st，
+它表示要等待前面所有存储内存的指令执行完后再执行后面的存储内存的指令。
+
+2．x86平台下的函数代码
+
+（1）编译屏障：
+
+
+void android_compiler_barrier(void)
+{
+    __asm__ __volatile__ ("" : : : "memory");
+}
+和ARM平台下一样，编译屏障的实现只是使用了伪指令memory。
+
+（2）内存屏障：
+
+
+#if ANDROID_SMP == 0
+void android_memory_barrier(void)
+{
+    android_compiler_barrier();
+}
+
+void android_memory_store_barrier(void)
+{
+    android_compiler_barrier();
+}
+#else
+void android_memory_barrier(void)
+{
+    asm__volatile_("mfence" : : : "memory");
+}
+void android_memory_store_barrier(void)
+{
+    android_compiler_barrier();
+}
+#endif
+x86平台也一样，如果是单CPU，内存屏障的实现只使用了编译屏障。在多CPU情况下，
+函数android_memory_barrier()使用了CPU指令“mfence”，
+对读写内存的情况都进行了屏障。但是android_memory_store_barrier()函数只使用了编译屏障，
+这是因为Intel的CPU不对写内存的指令重新排序。所以不需要内存屏蔽指令。
+
+
+下载：https://kenai.com/projects/base-hsdis/downloads
+找到对应的指令集，操作系统所对应的so文件下载，目前不支持windows
+
+安装目录：你的libjvm.so同目录
+$JAVA_PATH/jre/lib/cpu指令集/server/
+例如：
+$JAVA_PATH/jre/lib/amd64/server/
+文件名命名规则
+1. 不同的指令集使用hsdis-指令集
+hsdis-amd64, hsdis-sparc, hsdis-sparcv9
+2. so文件改名为以lib为前缀的文件名，
+例如libhsdis-amd64.so
+
+使用这些参数需要首先打开参数
+-XX:+UnlockDiagnosticVMOptions
+
+常见的用法
+-XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly
+PrintAssembly 打印JIT编译后的汇编
+PrintInterpreter 打印解释的汇编
+
+过滤输出
+-XX:CompileCommand=print,*MyClass.myMethod prints assembly for just one method
+-XX:CompileCommand=option,*MyClass.myMethod,PrintOptoAssembly (debug build only) produces the old print command output
+-XX:CompileCommand=option,*MyClass.myMethod,PrintNMethods produces method dumps
