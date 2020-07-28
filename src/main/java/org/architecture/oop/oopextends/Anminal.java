@@ -6,10 +6,6 @@ package org.architecture.oop.oopextends;
  */
 public class Anminal {
 
-    public Anminal() {
-        System.out.println("Anminal父类被构造完了");
-    }
-
     public String type;
 
     public String name;
@@ -19,12 +15,4 @@ public class Anminal {
     public String alias;
 
     public String belongOne;
-
-    public void water() {
-        System.out.println("water");
-    }
-
-    public void say() {
-
-    }
 }

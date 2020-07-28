@@ -1,4 +1,4 @@
-package org.architecture.oop;
+package org.architecture.oop.oopextends.example;
 
 /**
  * @author yanghai
