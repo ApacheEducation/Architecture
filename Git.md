@@ -6,7 +6,7 @@
  
   [Linux](https://www.jianshu.com/p/26ac33481b27)
  
-  [MacOs](https://www.cnblogs.com/wj-1314/p/7993819.html)
+  [Mac](https://www.cnblogs.com/wj-1314/p/7993819.html)
 
 * **Git的常用命令**
 
