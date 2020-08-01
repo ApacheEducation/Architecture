@@ -35,6 +35,8 @@
     [git add .] 添加本地修改的文件
     [git commit -m '提交的的理由'] 提交文件修改的简要说明
     [git push 实例: git push] 将提交的修改推送到远程服务器
+    [git pull] 实例: git pull] 更新本地仓库
+    [git status 实例: git status] 查看本地仓库的状态
 ```
 
 
