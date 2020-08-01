@@ -1,2 +1,0 @@
-１、在终端启动Test程序，并且拿到Test的进程ｉｄ，并且不要关闭Test的终端（可以观察到日志）
-２、启动TestAgentVMAttacher程序，此时Test程序就会打印Jvmti中so编写的内容了
