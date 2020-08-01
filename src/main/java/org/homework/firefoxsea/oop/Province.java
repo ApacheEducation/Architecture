@@ -14,4 +14,8 @@ public class Province implements Serializable {
 
     private String code;
 
+    private String alias;
+
+    private String history;
+
 }
