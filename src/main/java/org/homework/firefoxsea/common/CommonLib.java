@@ -1,5 +1,6 @@
 package org.homework.firefoxsea.common;
 
+import org.homework.firefoxsea.oop.SchoolUserRef;
 import org.homework.firefoxsea.oop.User;
 
 import java.util.ArrayList;
@@ -12,9 +13,10 @@ import java.util.List;
 public class CommonLib {
 
     public static List<User> users = new ArrayList<>();
+    public static List<SchoolUserRef> schoolUserRefs = new ArrayList<>();
 
     //初始化数据
     public void init() {
-
+        users.add(new User());
     }
 }
