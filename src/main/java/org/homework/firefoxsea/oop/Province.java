@@ -10,4 +10,8 @@ public class Province implements Serializable {
 
     private static final long serialVersionUID = -5233354330033796577L;
 
+    private String name;
+
+    private String code;
+
 }
