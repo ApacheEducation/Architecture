@@ -25,4 +25,10 @@ public class User implements Serializable {
 //    private Long schoolIdentify;   //学校的编码
 
 //    private Long provinceIdentify; //省编码
+
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
