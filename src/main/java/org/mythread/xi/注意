@@ -1,4 +1,0 @@
-fork/join框架的使用有一定的约束条件：
-1. 除了fork()  和  join()方法外，线程不得使用其他的同步工具。线程最好也不要sleep()
-2. 线程不得进行I/O操作
-3. 线程不得抛出checked exception
