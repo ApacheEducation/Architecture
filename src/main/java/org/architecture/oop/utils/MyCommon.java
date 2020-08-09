@@ -51,7 +51,6 @@ public class MyCommon {
         // key --> value  map
         //                    --> key(hashcode())
         // key --> null   set
-
         //Set(K-null) 散列(hashcode())表   元素的无序,不能重复
         Set<String> hashSet = new HashSet<>();
         Set<String> linkedHashSet = new LinkedHashSet<>();
@@ -71,7 +70,6 @@ public class MyCommon {
         }
 
 //        System.out.println(hashSet.size());
-
 
         //散列表 Node  Entry<K, V>
         Map<String, String> map = new HashMap<>();
