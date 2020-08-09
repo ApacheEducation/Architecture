@@ -24,4 +24,6 @@ public class Tiger extends Anminal implements Imethod{
     public String color() {
         return "RED";
     }
+
+
 }
