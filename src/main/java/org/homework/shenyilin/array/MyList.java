@@ -1,6 +1,6 @@
 package org.homework.shenyilin.array;
 
-//import javax.xml.soap.Node;
+
 
 public class MyList {
         MyNode head = null;
@@ -19,28 +19,6 @@ public class MyList {
         }
 
 
-//        public boolean deleteNode(int index) {
-//            if (index < 1 || index > length()) {
-//                return false;
-//            }
-//            if (index == 1) {
-//                head = head.next;
-//                return true;
-//            }
-//            int i = 1;
-//            Node preNode = head;
-//            Node curNode = preNode.next;
-//            while (curNode != null) {
-//                if (i == index) {
-//                    preNode.next = curNode.next;
-//                    return true;
-//                }
-//                preNode = curNode;
-//                curNode = curNode.next;
-//                i++;
-//            }
-//            return false;
-//        }
 
        public int length() {
             int length = 0;
@@ -70,14 +48,6 @@ public class MyList {
 
             return false;
         }
-//
-//        public void printList() {
-//            Node tmp = head;
-//            while (tmp != null) {
-//                System.out.println(tmp.data);
-//                tmp = tmp.next;
-//            }
-//        }
 
 
 
