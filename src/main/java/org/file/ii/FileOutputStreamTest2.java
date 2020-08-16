@@ -1,5 +1,7 @@
 package org.file.ii;
 
+import io.netty.buffer.ByteBufUtil;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -11,8 +13,9 @@ public class FileOutputStreamTest2 {
     public static void main(String[] args) throws IOException {
         OutputStream fos = null;
         try {
-            fos = new FileOutputStream("/data/bbbbb.txt");
-            String str = "测试程序sjklsjkls;kjsg;kjsjlgsd";
+            fos = new FileOutputStream("bbbbb.txt");
+//            String str = "测试程序sjklsjkls;kjsg;kjsjlgsd";
+//            fos.write(str.getBytes());
             fos.flush();
         } catch (Exception e) {
             e.printStackTrace();
