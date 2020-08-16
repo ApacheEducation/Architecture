@@ -7,7 +7,6 @@ public class RedirectOut
 	{
 		PrintStream ps = null;
 		try {
-
 			ps = new PrintStream(new FileOutputStream("out.txt",true));
 			System.setOut(ps);
 			System.out.println("普通字符串");

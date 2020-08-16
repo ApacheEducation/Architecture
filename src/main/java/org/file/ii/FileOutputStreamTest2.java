@@ -9,14 +9,14 @@ import java.io.OutputStream;
  */
 public class FileOutputStreamTest2 {
     public static void main(String[] args) throws IOException {
-        OutputStream fos=null;
+        OutputStream fos = null;
         try {
-            fos=new FileOutputStream("/data/bbbbb.txt");
-            String str="测试程序sjklsjkls;kjsg;kjsjlgsd";
+            fos = new FileOutputStream("/data/bbbbb.txt");
+            String str = "测试程序sjklsjkls;kjsg;kjsjlgsd";
             fos.flush();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 fos.close();
                 System.out.println("aaaaaa");

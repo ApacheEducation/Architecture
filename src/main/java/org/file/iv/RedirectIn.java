@@ -8,7 +8,7 @@ public class RedirectIn
 	public static void main(String[] args)
 	{
 		try{
-			FileInputStream fis = new FileInputStream("RedirectIn.java");
+			FileInputStream fis = new FileInputStream("/Users/yanghai/Documents/easyarArchitecture/Architecture/src/main/java/org/file/iv/RedirectIn.java");
 			System.setIn(fis);
 			Scanner sc = new Scanner(System.in);
 			sc.useDelimiter("\n");
