@@ -7,9 +7,9 @@ public class ReplaceTest {
     public static void main(String[] args) {
         try {
             ObjectOutputStream oos = new ObjectOutputStream(
-                    new FileOutputStream("replace.txt"));
+                    new FileOutputStream("ReplaceTest.txt"));
             ObjectInputStream ois = new ObjectInputStream(
-                    new FileInputStream("replace.txt"));
+                    new FileInputStream("ReplaceTest.txt"));
             Person per = new Person("aaa", 500);
             oos.writeObject(per);
             ArrayList list = (ArrayList) ois.readObject();

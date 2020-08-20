@@ -6,8 +6,7 @@ public class WriteObject {
     public static void main(String[] args) {
         try {
 
-            ObjectOutputStream oos = new ObjectOutputStream(
-                    new FileOutputStream("/opt/aaaaaa"));
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("WriteObject.txt"));
             Teacher per = new Teacher("aaa");
 //            Person per1 = new Person("aaa", 500);
             oos.writeObject(per);

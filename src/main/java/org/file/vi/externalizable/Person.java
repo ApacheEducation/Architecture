@@ -36,12 +36,23 @@ public class Person implements Externalizable {
         return this.age;
     }
 
+    /**
+     * 序列化
+     * @param out
+     * @throws IOException
+     */
     public void writeExternal(ObjectOutput out)
             throws IOException {
         out.writeObject(new StringBuffer(name).reverse());
         out.writeInt(age);
     }
 
+    /**
+     * 反序列化
+     * @param in
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public void readExternal(ObjectInput in)
             throws IOException, ClassNotFoundException {
         this.name = ((StringBuffer) in.readObject()).reverse().toString();

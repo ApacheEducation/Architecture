@@ -1,0 +1,2 @@
+普通字符串
+org.file.iv.RedirectOut@5caf905d

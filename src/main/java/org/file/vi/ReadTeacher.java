@@ -7,7 +7,7 @@ public class ReadTeacher {
         try {
             ObjectInputStream ois = new ObjectInputStream(
 //				new FileInputStream("teacher.txt"));
-                    new FileInputStream("/opt/aaaaaa"));
+                    new FileInputStream("/Users/yanghai/Documents/easyarArchitecture/Architecture/WriteObject.txt"));
 //			System.out.println(ois.available());
             Teacher t1 = (Teacher) ois.readObject();
             System.out.println(t1.getName());
