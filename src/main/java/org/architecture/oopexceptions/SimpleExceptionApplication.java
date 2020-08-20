@@ -1,7 +1,5 @@
 package org.architecture.oopexceptions;
 
-import org.architecture.oopexceptions.owner.MyExceptionKotlin;
-
 /**
  * @author yanghai
  * @since 2020/8/9 19:18
@@ -15,10 +13,6 @@ public class SimpleExceptionApplication {
 //        for (int i = 0; i < texts.length; i++) {
 //            texts[i] = i + "";
 //        }
-
-        MyExceptionKotlin myExceptionKotlin = new MyExceptionKotlin();
-
-        simpleExceptionApplication.cout(myExceptionKotlin.getMessage());
 
         //throws  抛出去
         //try -- catch finally 自己有能力处理
