@@ -1,6 +1,7 @@
 package com.athena.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * @author yanghai

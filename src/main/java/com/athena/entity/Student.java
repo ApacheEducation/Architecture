@@ -10,6 +10,11 @@ import lombok.Data;
 public class Student extends User {
 
     /**
+     * 班级的编号
+     */
+    private Long classesId;
+
+    /**
      * 学生的年级
      */
     private Integer level;

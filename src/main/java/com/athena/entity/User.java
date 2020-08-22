@@ -1,13 +1,16 @@
 package com.athena.entity;
 
 
+import lombok.Data;
+
 import java.sql.Date;
 
 /**
  * @author yanghai
  * @since 2020/8/23 00:16
  */
-public class User extends BaseEntity{
+@Data
+public class User extends BaseEntity {
 
     /**
      * 编号
