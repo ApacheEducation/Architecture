@@ -67,12 +67,12 @@ public class JDBCApplication {
 //        JdbcClient.getInstance().closeConnection(connection);
 
         //删除
-        String deleteSql = "DELETE FROM USER WHERE USER.id = 1";
-        Connection connection = JdbcClient.getInstance().getConnection();
-        connection.setAutoCommit(false);
-        PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
-        preparedStatement.execute();
-        connection.commit();
-        JdbcClient.getInstance().closeConnection(connection);
+//        String deleteSql = "DELETE FROM USER WHERE USER.id = 1";
+//        Connection connection = JdbcClient.getInstance().getConnection();
+//        connection.setAutoCommit(false);
+//        PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
+//        preparedStatement.execute();
+//        connection.commit();
+//        JdbcClient.getInstance().closeConnection(connection);
     }
 }
