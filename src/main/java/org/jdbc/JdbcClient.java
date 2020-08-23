@@ -22,13 +22,15 @@ public class JdbcClient {
         DB_USER = "root";
         DB_PASSWORD = "root";
         try {
+            //加载JDBC驱动
             Class.forName(JDBC_DRIVER);
         } catch (Exception e) {
             log.error("加载失败");
         }
     }
 
-    public final static JdbcClient instance = new JdbcClient();
+    //饿汉式
+    private final static JdbcClient instance = new JdbcClient();
 
     public static JdbcClient getInstance() {
         return instance;
