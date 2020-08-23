@@ -20,6 +20,7 @@ public class SchoolLoaderImpl implements ISchoolLoader {
         if (null == provinceId) {
             return Collections.emptyList();
         }
+        //找数据的过程换成去数据库里面找是不是就可以了
         return AthenaDb.DB_SCHOOLS.stream().filter(it -> Objects.equals(it.getProvinceId(), provinceId)).collect(Collectors.toList());
     }
 

@@ -13,9 +13,4 @@ public class MyException extends Exception {
     }
 
     public MyException() { super(); }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
 }

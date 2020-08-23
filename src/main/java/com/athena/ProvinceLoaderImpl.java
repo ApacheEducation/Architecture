@@ -1,6 +1,7 @@
 package com.athena;
 
 import com.athena.api.IProvinceLoader;
+import com.athena.dao.ProvinceDao;
 import com.athena.entity.Province;
 import com.onix.AthenaDb;
 import org.apache.commons.lang3.StringUtils;

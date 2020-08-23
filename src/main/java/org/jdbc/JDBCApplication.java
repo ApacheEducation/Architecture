@@ -50,7 +50,7 @@ public class JDBCApplication {
 
 
         //查找
-//        String querySql = "SELECT * FROM USER";
+//        String querySql = "SELECT * FROM USER;
 //        Connection connection = JdbcClient.getInstance().getConnection();
 //        connection.setAutoCommit(false);
 //        PreparedStatement preparedStatement = connection.prepareStatement(querySql); //解析SQL

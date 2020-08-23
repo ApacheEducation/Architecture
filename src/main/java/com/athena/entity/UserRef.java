@@ -9,7 +9,7 @@ import java.sql.Date;
  * @since 2020/8/23 00:36
  */
 @Data
-public class UserRef {
+public class UserRef extends BaseEntity {
 
     private String id;
 

@@ -2,13 +2,16 @@ package com.athena.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @author yanghai
  * @since 2020/8/23 00:28
  */
 @Data
-public class Student extends User {
+public class Student extends User implements Serializable {
 
+    private static final long serialVersionUID = -807676971379854606L;
     /**
      * 班级的编号
      */
